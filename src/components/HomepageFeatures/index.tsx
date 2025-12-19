@@ -5,48 +5,78 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  emoji: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'AI-Powered Detection',
+    emoji: '🤖',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Menggunakan teknologi Computer Vision dan Machine Learning untuk mendeteksi
+        kondisi kesehatan kucing dengan akurasi tinggi melalui analisis gambar wajah.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Multi-Area Analysis',
+    emoji: '🔍',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Analisis detail pada berbagai area wajah kucing: mata kiri & kanan, telinga
+        kiri & kanan, dan mulut untuk deteksi yang lebih komprehensif.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'RESTful API',
+    emoji: '⚡',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        API yang mudah diintegrasikan dengan dokumentasi lengkap untuk ML Service
+        dan Storage Service yang dapat digunakan dalam aplikasi Anda.
+      </>
+    ),
+  },
+  {
+    title: 'Real-time Processing',
+    emoji: '🚀',
+    description: (
+      <>
+        Proses deteksi yang cepat dengan hasil instan. Upload foto kucing dan
+        dapatkan hasil analisis dalam hitungan detik.
+      </>
+    ),
+  },
+  {
+    title: 'Comprehensive Documentation',
+    emoji: '📚',
+    description: (
+      <>
+        Dokumentasi lengkap dengan contoh kode, API reference, dan panduan
+        integrasi untuk memudahkan developer menggunakan ResCAT.
+      </>
+    ),
+  },
+  {
+    title: 'Cloud Storage',
+    emoji: '☁️',
+    description: (
+      <>
+        Sistem penyimpanan file terorganisir dengan bucket management untuk
+        menyimpan foto original, hasil crop, dan hasil analisis.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, emoji, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+      <div className="text--center" style={{fontSize: '4rem', marginBottom: '1rem'}}>
+        {emoji}
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
@@ -60,6 +90,14 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className="text--center" style={{marginBottom: '3rem'}}>
+          <Heading as="h2" style={{fontSize: '2.5rem', marginBottom: '1rem'}}>
+            Mengapa ResCAT?
+          </Heading>
+          <p style={{fontSize: '1.25rem', color: 'var(--ifm-color-emphasis-600)'}}>
+            Platform lengkap untuk deteksi kesehatan kucing dengan teknologi AI
+          </p>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

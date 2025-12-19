@@ -2,46 +2,136 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Selamat Datang di ResCAT Documentation
 
-Let's discover **Docusaurus in less than 5 minutes**.
+**ResCAT** (Rescue Cat) adalah platform komprehensif untuk deteksi kesehatan kucing menggunakan teknologi **Artificial Intelligence** dan **Computer Vision**. Sistem ini dirancang untuk membantu pemilik kucing melakukan screening awal kondisi kesehatan kucing mereka melalui analisis gambar.
 
-## Getting Started
+## 🎯 Apa itu ResCAT?
 
-Get started by **creating a new site**.
+ResCAT adalah ekosistem aplikasi yang terdiri dari beberapa layanan terintegrasi:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **Main Application** - Aplikasi web untuk user interaction
+- **ML Service** - Machine learning service untuk deteksi dan klasifikasi
+- **Storage Service** - File storage untuk manajemen gambar
 
-### What you'll need
+## ✨ Fitur Utama
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### 🔍 Deteksi Multi-Area
+Analisis komprehensif pada berbagai area wajah kucing:
+- Mata kiri dan kanan
+- Telinga kiri dan kanan
+- Area mulut
 
-## Generate a new site
+### 🤖 AI-Powered Analysis
+- Model MobileNetV3 untuk validasi gambar kucing
+- YOLO untuk deteksi wajah
+- EfficientNetB1 untuk klasifikasi kondisi
+- Grad-CAM visualization untuk interpretabilitas
 
-Generate a new Docusaurus site using the **classic template**.
+### ☁️ Cloud Storage
+- Upload dan manajemen file terorganisir
+- Bucket system untuk kategorisasi gambar
+- API RESTful untuk integrasi mudah
 
-The classic template will automatically be added to your project after you run the command:
+## 🚀 Quick Start
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+### Untuk Developer
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+1. **Baca Dokumentasi Arsitektur**
+   
+   Lihat [Arsitektur Sistem](/docs/architecture) untuk memahami bagaimana sistem bekerja
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+2. **Setup Local Development**
+   - Clone repository yang diperlukan
+   - Install dependencies
+   - Configure environment variables
 
-## Start your site
+3. **Integrate dengan API**
+   - ML Service: `https://ml.rescat.life`
+   - Storage Service: `https://storage.rescat.life`
 
-Run the development server:
+### Untuk End User
 
-```bash
-cd my-website
-npm run start
-```
+1. Kunjungi [app.rescat.life](https://app.rescat.life)
+2. Register atau login
+3. Upload foto kucing Anda
+4. Dapatkan hasil analisis instant
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+## 📚 Dokumentasi
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+### Untuk Developer
+- [Arsitektur Sistem](/docs/architecture)
+- [ML Service Documentation](/docs/services/ml-service)
+- [Storage Service Documentation](/docs/services/storage-service)
+- [Main App Documentation](/docs/services/main-app)
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+### API Reference
+- [ML Service API](/docs/api/ml-service)
+- [Storage Service API](/docs/api/storage-service)
+
+## 🏗️ Teknologi Stack
+
+### Main Application
+- **Backend**: Laravel 11 + Inertia.js
+- **Frontend**: React/Vue.js
+- **Database**: MySQL/PostgreSQL
+- **Auth**: Laravel Fortify + OAuth
+
+### ML Service
+- **Framework**: Flask (Python)
+- **ML Models**: TensorFlow, Keras, ONNX
+- **Image Processing**: PIL, NumPy, rembg
+
+### Storage Service
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Upload**: Multer
+- **Security**: Helmet, CORS, Rate Limiting
+
+## 🌟 Use Cases
+
+### 1. Pet Owner
+Screening kesehatan kucing secara mandiri sebelum ke dokter hewan.
+
+### 2. Veterinary Telemedicine
+Alat bantu diagnosis jarak jauh untuk klinik hewan.
+
+### 3. Pet Care Apps
+Integrasi fitur health check pada aplikasi perawatan hewan.
+
+### 4. Research
+Platform untuk studi tentang penyakit kucing berbasis computer vision.
+
+## 🔗 Links
+
+- **Landing Page**: [rescat.life](https://rescat.life)
+- **Main App**: [app.rescat.life](https://app.rescat.life)
+- **ML Service**: [ml.rescat.life](https://ml.rescat.life)
+- **Storage Service**: [storage.rescat.life](https://storage.rescat.life)
+- **Documentation**: [docs.rescat.life](https://docs.rescat.life)
+
+## 💡 Cara Kerja
+
+ResCAT menggunakan pipeline multi-stage untuk analisis gambar kucing:
+
+1. **Upload** → User mengunggah foto kucing
+2. **Validation** → Sistem memverifikasi apakah gambar adalah kucing
+3. **Detection** → Mendeteksi wajah kucing dalam gambar
+4. **Landmark** → Mengidentifikasi posisi mata, telinga, mulut
+5. **Classification** → Mengklasifikasi setiap area (normal/abnormal)
+6. **Visualization** → Menampilkan hasil dengan Grad-CAM heatmap
+
+## 📞 Support
+
+Untuk pertanyaan atau bantuan, silakan hubungi:
+- Email: support@rescat.life
+- GitHub: [ResCAT Storage](https://github.com/bayufadayan/rescat-storage)
+
+## 📄 License
+
+ResCAT adalah proyek skripsi/thesis. Untuk informasi lisensi lebih lanjut, silakan hubungi tim pengembang.
+
+---
+
+**Mari mulai!** 🚀 Lanjutkan ke [Arsitektur Sistem](/docs/architecture) untuk memahami bagaimana ResCAT bekerja.
+
